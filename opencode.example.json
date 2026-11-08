@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "zerocoder": {
+      "type": "remote",
+      "url": "https://vibeucheba.yonote.ru/api/v2/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer {env:ZEROCODER_MCP_TOKEN}"
+      }
+    }
+  }
+}
