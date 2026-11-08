@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local-table-anonymizer"
+version = "1.0.0"
+description = "Offline reversible anonymizer for CSV and XLSX tables"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Elsa" }]
+keywords = ["anonymization", "privacy", "csv", "xlsx", "offline", "local-first"]
+classifiers = [
+    "Environment :: Console",
+    "Framework :: Flask",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security :: Cryptography",
+]
+dependencies = [
+    "Flask>=3.1,<4.0",
+    "cryptography>=42.0,<52.0",
+    "openpyxl>=3.1,<4.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0,<9.0", "requests>=2.31,<3.0"]
+
+[project.scripts]
+lta = "lta.app:run"
+
+[tool.setuptools.packages.find]
+include = ["lta*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
